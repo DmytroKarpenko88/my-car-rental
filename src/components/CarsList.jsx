@@ -17,8 +17,14 @@ export const CarsList = ({ cars }) => {
   };
 
   useEffect(() => {
-    const storedFavorites = JSON.parse(localStorage.getItem('favorites') || []);
-    setFavorites(storedFavorites);
+    try {
+      const storedFavorites = JSON.parse(
+        localStorage.getItem('favorites') || []
+      );
+      setFavorites(storedFavorites);
+    } catch (error) {
+      console.log(error.message);
+    }
   }, []);
 
   useEffect(() => {
