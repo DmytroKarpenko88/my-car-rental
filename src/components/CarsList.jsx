@@ -3,7 +3,7 @@ import { CarItem } from './CarItem';
 
 export const CarsList = ({ cars }) => {
   const [favorites, setFavorites] = useState(
-    JSON.parse(localStorage.getItem('favorites') || [])
+    JSON.parse(localStorage.getItem('favorites')) || []
   );
 
   const addToFavorites = car => {
