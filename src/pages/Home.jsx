@@ -1,11 +1,10 @@
-import styles from './App.module.css';
+import React from 'react';
 
-function App() {
+const Home = () => {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-
-      <div className={styles.logo}>
+    <div className=" w-96">
+      home
+      {/* <div className="w-24">
         <svg
           version="1.0"
           xmlns="http://www.w3.org/2000/svg"
@@ -195,9 +194,9 @@ c-108 14 -354 28 -725 42 -417 15 -2168 32 -2571 24 l-355 -7 -40 34 c-42 36
             />
           </g>
         </svg>
-      </div>
+      </div> */}
     </div>
   );
-}
+};
 
-export default App;
+export default Home;
