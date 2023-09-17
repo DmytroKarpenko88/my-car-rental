@@ -18,9 +18,8 @@ export const CarsList = ({ cars }) => {
 
   useEffect(() => {
     try {
-      const storedFavorites = JSON.parse(
-        localStorage.getItem('favorites') || []
-      );
+      const storedFavorites =
+        JSON.parse(localStorage.getItem('favorites')) || [];
       setFavorites(storedFavorites);
     } catch (error) {
       console.log(error.message);
