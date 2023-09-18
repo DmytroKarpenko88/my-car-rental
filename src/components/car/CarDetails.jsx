@@ -30,32 +30,36 @@ export const CarDetails = ({ car }) => {
         src={img}
         alt={model}
       />
-      <div>
+      <div className="text-l mt-[14px] font-medium">
         <span>
           {make}
-          <span> {model}</span>, {year}
+          <span className="text-blue-500"> {model}</span>, {year}
         </span>
       </div>
-      <div>
-        <span>{city}</span>
-        <span>{country}</span>
-        <span>{id}</span>
-        <span>Year:{year}</span>
-        <span>Type:{type}</span>
-        <span>Class:{carClass}</span>
+      <div className="mt-2 text-xs text-gray-rgba-18-20-23-50">
+        <div className="flex flex-row gap-[12px] ">
+          <span>{city}</span>
+          <span>{country}</span>
+          <span>{id}</span>
+          <span>Year:{year}</span>
+          <span>Type:{type}</span>
+          <span>Class:{carClass}</span>
+        </div>
+        <div className="flex flex-row gap-[12px] mt-[4px]">
+          <span>Fuel Consumption:{fuelConsumption} </span>
+          <span>Engine Size:{engineSize} </span>
+        </div>
       </div>
-      <div>
-        <span>Fuel Consumption:{fuelConsumption} </span>
-        <span>Engine Size:{engineSize} </span>
-      </div>
-      <p>{description}</p>
-      <h2>Accessories and functionalities:</h2>
-      <ul>
+      <p className="mt-[14px] text-sm">{description}</p>
+      <h2 className="text-sm font-medium mt-3">
+        Accessories and functionalities:
+      </h2>
+      <ul className="flex gap-[12px] mt-2 text-xs text-gray-rgba-18-20-23-50">
         {accessories.map((acc, index) => (
           <li key={index}>{acc}</li>
         ))}
       </ul>
-      <ul>
+      <ul className="flex gap-[12px] mt-2 text-xs text-gray-rgba-18-20-23-50">
         {functionalities.map((acc, index) => (
           <li key={index}>{acc}</li>
         ))}
