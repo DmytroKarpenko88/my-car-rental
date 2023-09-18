@@ -13,3 +13,8 @@ body {
 
   color: #121417;
 }
+
+.active {
+  background-color: #3470ff;
+  color: white;
+}

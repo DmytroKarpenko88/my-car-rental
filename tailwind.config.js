@@ -5,6 +5,8 @@ module.exports = {
     extend: {
       colors: {
         gray: {
+          'dark-gray': '#363535',
+          'light-gray': '#F9F9F9',
           500: '#8A8A89',
           'rgba-18-20-23-50': 'rgba(18, 20, 23, 0.50)',
         },
@@ -18,7 +20,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Manrope', 'Montserrat', 'sans-serif'],
+        sans: ['Manrope', 'sans-serif'],
+        text: ['Montserrat', 'sans-serif'],
       },
       fontSize: {
         xs: ['12px', '18px'],
@@ -30,9 +33,9 @@ module.exports = {
       },
       spacing: {
         // Визначте відступи (margins та paddings) для вашого проекту
-        1: '8px',
-        2: '16px',
-        3: '24px',
+        // 1: '8px',
+        // 2: '16px',
+        // 3: '24px',
         // Додайте інші значення відступів за потребою
       },
       // Додайте інші налаштування теми за потребою

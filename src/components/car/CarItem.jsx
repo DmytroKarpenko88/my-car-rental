@@ -46,27 +46,27 @@ export const CarItem = ({ car, addToFavorites, isFavorite }) => {
           src={img}
           alt={model}
         />
-        <div className="flex justify-between mt-[14px] font-medium text-base">
-          <div>
-            <span>
+        <div className="flex justify-between mt-[14px] font-medium text-base ">
+          <div className="truncate">
+            <span className="">
               {make}
-              <span className="text-blue-500"> {model}</span>, {year}
+              <span className="text-blue-500  "> {model}</span>, {year}
             </span>
           </div>
           <span>{rentalPrice}</span>
         </div>
         <div className="text-xs text-gray-rgba-18-20-23-50 mt-2">
-          <div className="flex flex-row gap-x-[6px]">
+          <div className="flex flex-row gap-x-[6px] truncate">
             <span className="">{city}</span>
             <span>{country}</span>
             <span>{rentalCompany}</span>
             <span>{carClass}</span>
           </div>
-          <div className="flex flex-row gap-x-[6px] mt-1">
+          <div className="flex flex-row gap-x-[6px] mt-1 truncate">
             <span>{type}</span>
             <span>{model}</span>
             <span>{mileage}</span>
-            <span>{functionalities[0]}</span>
+            <span className="truncate">{functionalities[0]}</span>
           </div>
         </div>
         <button
