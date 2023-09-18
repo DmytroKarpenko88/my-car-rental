@@ -1,13 +1,14 @@
 import { CloseIcon } from 'components/icons/CloseIcon';
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
-// import style from './CarModal.module.css';
+import style from './CarModal.module.css';
 
 export const CarModal = props => {
   return (
     <Modal
       {...props}
-      size="l"
+      size="xl"
+      dialogClassName={style.modal}
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >

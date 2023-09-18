@@ -4,3 +4,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+
+  color: #121417;
+}

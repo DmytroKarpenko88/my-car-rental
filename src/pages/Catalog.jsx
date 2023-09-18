@@ -13,9 +13,9 @@ const Catalog = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <CarsList cars={cars} />
-    </div>
+    </>
   );
 };
 

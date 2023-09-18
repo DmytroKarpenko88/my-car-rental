@@ -4,9 +4,9 @@ import { Outlet } from 'react-router-dom';
 
 export const Layout = ({ children }) => {
   return (
-    <div className="container mx-auto">
+    <div className="container w-[1184px] p-0 mx-auto">
       <Header />
-      <main className="p-4">
+      <main className="">
         <Outlet />
       </main>
     </div>

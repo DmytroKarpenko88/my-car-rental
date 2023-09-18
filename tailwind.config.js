@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         gray: {
           500: '#8A8A89',
+          'rgba-18-20-23-50': 'rgba(18, 20, 23, 0.50)',
         },
         black: '#121417',
         white: '#F7F7FB',
@@ -20,6 +21,7 @@ module.exports = {
         sans: ['Manrope', 'Montserrat', 'sans-serif'],
       },
       fontSize: {
+        xs: ['12px', '18px'],
         sm: ['14px', '20px'],
         base: ['16px', '24px'],
         lg: ['20px', '28px'],

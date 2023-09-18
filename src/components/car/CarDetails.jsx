@@ -25,7 +25,11 @@ export const CarDetails = ({ car }) => {
 
   return (
     <div className="container p-6">
-      <img className="rounded-xl" src={img} alt={model} />
+      <img
+        className="rounded-[14px] w-[461px] h-[248px] object-cover"
+        src={img}
+        alt={model}
+      />
       <div>
         <span>
           {make}

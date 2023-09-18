@@ -7,8 +7,6 @@ export const CarsList = ({ cars }) => {
   );
 
   const addToFavorites = car => {
-    console.log('car:', car);
-
     if (!favorites.some(fav => fav.id === car.id)) {
       setFavorites([...favorites, car]);
     } else {
@@ -31,7 +29,7 @@ export const CarsList = ({ cars }) => {
   }, [favorites]);
 
   return (
-    <ul>
+    <ul className="flex flex-wrap gap-x-[29px] gap-y-[50px] w-[1184px]">
       {cars.length > 0 &&
         cars?.map(car => (
           <li key={car.id}>
