@@ -2,7 +2,7 @@ import React from 'react';
 import { Header } from './header/Header';
 import { Outlet } from 'react-router-dom';
 
-export const Layout = ({ children }) => {
+export const Layout = () => {
   return (
     <div className="container w-[1184px] p-0 mx-auto">
       <Header />

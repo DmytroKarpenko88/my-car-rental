@@ -99,9 +99,12 @@ export const CarDetails = ({ car }) => {
         </span>
       </div>
 
-      <button className="bg-blue-500 mt-4 rounded-xl py-[12px] px-[50px] text-white hover:bg-indigo-500">
+      <a
+        href="tel:+380730000000"
+        className="bg-blue-500 mt-4 rounded-xl py-[12px] px-[50px] text-white hover:bg-indigo-500"
+      >
         Rental car
-      </button>
+      </a>
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { CarModal } from '../modals/CarModal';
 import { useState } from 'react';
 import { CarDetails } from './CarDetails';
 
-export const CarItem = ({ car, addToFavorites, isFavorite }) => {
+export const CarItem = ({ car, toggleFavorite, isFavorite }) => {
   const [modalShow, setModalShow] = useState(false);
   const {
     year,
@@ -20,10 +20,6 @@ export const CarItem = ({ car, addToFavorites, isFavorite }) => {
     mileage,
   } = car;
 
-  const handleToggleFavorite = () => {
-    addToFavorites(car);
-  };
-
   const { city, country } = parseAddress(address);
 
   return (
@@ -31,7 +27,7 @@ export const CarItem = ({ car, addToFavorites, isFavorite }) => {
       <div className="w-[274px] relative">
         <button
           className="absolute top-3.5 right-3.5 stroke-none"
-          onClick={handleToggleFavorite}
+          onClick={() => toggleFavorite(car)}
         >
           <FavoriteIcon
             className={

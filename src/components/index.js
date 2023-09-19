@@ -1,7 +1,6 @@
 export * from './header/Header';
 export * from './header/NavBar';
 export * from './Layout';
-export * from './Routes/RoutesCar';
 export * from './icons/LogoIcon';
 export * from './car/CarsList';
 export * from './car/CarItem';
