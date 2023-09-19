@@ -29,13 +29,10 @@ export const CarDetails = ({ car }) => {
   const { city, country } = parseAddress(address);
 
   const conditions = parseKeyValueString(rentalConditions);
-  console.log('result:', conditions);
 
   const mil = parseMileage(mileage);
-  console.log('mil:', mil);
 
   const price = parsePrice(rentalPrice);
-  console.log('price:', price);
 
   return (
     <div className="container p-6">
@@ -101,7 +98,7 @@ export const CarDetails = ({ car }) => {
 
       <a
         href="tel:+380730000000"
-        className="bg-blue-500 mt-4 rounded-xl py-[12px] px-[50px] text-white hover:bg-indigo-500"
+        className="bg-blue-500 inline-block mt-4 rounded-xl py-[12px] px-[50px] text-white hover:bg-indigo-500"
       >
         Rental car
       </a>

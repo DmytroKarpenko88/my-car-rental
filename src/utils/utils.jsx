@@ -15,6 +15,14 @@ export const parseKeyValueString = str => {
   return arr;
 };
 
+export const allUnicBrands = cars =>
+  cars.reduce((acc, car) => {
+    if (!acc.includes(car.make)) {
+      acc.push(car.make);
+    }
+    return acc;
+  }, []);
+
 export const parseMileage = num => num.toLocaleString('en-EN');
 
 export const parsePrice = str => str.split('').slice(1).join('');

@@ -29,7 +29,7 @@ const Catalog = ({ favorites, toggleFavorite }) => {
 
   return (
     <>
-      <Filter />
+      <Filter allCars={allCars} />
       <CarsList
         cars={allCars.slice(0, visibleCars)}
         favorites={favorites}
