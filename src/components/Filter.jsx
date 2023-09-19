@@ -1,22 +1,56 @@
-import React from // useState
-'react';
-import { allUnicBrands } from 'utils';
+import React, { useState } from 'react';
+import { allUnicBrands, filterCars, formatNumber, priceList } from 'utils';
 
-export const Filter = ({ allCars }) => {
-  // const [make, setMake] = useState('');
-  // const [price, setPrice] = useState('');
-  // const [mileageRange, setMileageRange] = useState([]);
+export const Filter = ({ allCars, setFilterCars, setTotalCars }) => {
+  const [filterData, setFilterData] = useState({
+    make: '',
+    price: '',
+    mileageMin: '',
+    mileageMax: '',
+  });
 
-  // const handleFilterChange = (make, priceRange, mileageRange) => {};
   const brands = allUnicBrands(allCars);
+
+  const priceArr = priceList(allCars);
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setFilterData({ ...filterData, [name]: value });
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const carsForSearch = filterCars(allCars, filterData);
+    setFilterCars(carsForSearch);
+    setTotalCars(carsForSearch.length);
+  };
+
+  const resetForm = e => {
+    setFilterData({
+      make: '',
+      price: '',
+      mileageMin: '',
+      mileageMax: '',
+    });
+    const carsForSearch = filterCars(allCars, filterData);
+    setFilterCars(carsForSearch);
+    setTotalCars(allCars.length);
+  };
 
   return (
     <div className="mx-auto w-[859px] h-[74px] bg-gray-400">
-      <form className="flex">
+      <form className="flex" onSubmit={handleSubmit}>
         <div className="">
           <p>Car brand</p>
-          <select name="" id="">
-            <option value="">Enter the text</option>
+          <select
+            name="make"
+            id="make"
+            value={filterData.make}
+            onChange={handleChange}
+          >
+            <option value="" disabled>
+              Enter the text
+            </option>
             {brands.map((brand, index) => (
               <option key={index} value={brand}>
                 {brand}
@@ -27,24 +61,62 @@ export const Filter = ({ allCars }) => {
 
         <div>
           <p>Price/ 1 hour</p>
-          <select name="" id="2">
-            <option value="">To $</option>
-            <option value="">10</option>
-            <option value="">20</option>
+          <select
+            name="price"
+            id="price"
+            value={filterData.price}
+            onChange={handleChange}
+          >
+            <option value="" disabled>
+              To $
+            </option>
+            {priceArr.map((price, index) => (
+              <option key={index} value={price}>
+                {price}
+              </option>
+            ))}
           </select>
+          <span className="selected-price">
+            {filterData.price ? `To ${filterData.price} $` : ''}
+          </span>
         </div>
 
         <div>
-          <p>Сar mileage / km</p>
+          <p>Car mileage / km</p>
           <label>
             From
-            <input type="text" />
+            <input
+              type="text"
+              name="mileageMin"
+              value={formatNumber(filterData.mileageMin)}
+              onChange={handleChange}
+            />
           </label>
           <label>
             To
-            <input type="text" />
+            <input
+              type="text"
+              name="mileageMax"
+              value={formatNumber(filterData.mileageMax)}
+              onChange={handleChange}
+            />
           </label>
         </div>
+
+        <button
+          type="submit"
+          className="bg-blue-500 rounded-xl px-11 py-[14px] hover:bg-indigo-500 text-white font-semibold text-sm"
+        >
+          Search
+        </button>
+
+        <button
+          type="button"
+          onClick={resetForm}
+          className="bg-blue-500 rounded-xl px-11 py-[14px]  hover:bg-indigo-500 text-white font-semibold text-sm"
+        >
+          Reset
+        </button>
       </form>
     </div>
   );

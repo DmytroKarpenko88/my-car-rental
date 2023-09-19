@@ -23,18 +23,53 @@ export const allUnicBrands = cars =>
     return acc;
   }, []);
 
-export const parseMileage = num => num.toLocaleString('en-EN');
-
 export const parsePrice = str => str.split('').slice(1).join('');
 
-// export const toggleObject = (array, objectToAddOrRemove) => {
-//   const objectIndex = array.findIndex(obj => obj.id === objectToAddOrRemove.id);
+export const parseMileage = num => num.toLocaleString('en-EN');
 
-//   if (objectIndex !== -1) {
-//     // Якщо об'єкт знайдено, видаляємо його
-//     array.splice(objectIndex, 1);
-//   } else {
-//     // Якщо об'єкт не знайдено, додаємо його
-//     array.push(objectToAddOrRemove);
-//   }
-// };
+export const priceList = cars => {
+  const numbers = cars.map(({ rentalPrice }) => parsePrice(rentalPrice));
+  const minNumber = Math.min(...numbers);
+  const maxNumber = Math.max(...numbers);
+
+  const arr = [];
+  for (
+    let i = Math.ceil(minNumber / 10) * 10;
+    i <= Math.ceil(maxNumber / 10) * 10;
+    i += 10
+  ) {
+    arr.push(i);
+  }
+  return arr;
+};
+
+export const formatNumber = value => {
+  if (!value) return '';
+  const numericValue = parseFloat(value.replace(/[^0-9.]/g, ''));
+  if (isNaN(numericValue)) return '';
+  return numericValue.toLocaleString('en-US');
+};
+
+export const filterCars = (cars, filters) => {
+  const { make, price, mileageMin, mileageMax } = filters;
+
+  return cars.filter(car => {
+    if (make && car.make !== make) {
+      return false;
+    }
+
+    if (price && parseFloat(parsePrice(car.rentalPrice)) > parseFloat(price)) {
+      return false;
+    }
+
+    if (mileageMin && parseFloat(car.mileage) < parseFloat(mileageMin)) {
+      return false;
+    }
+
+    if (mileageMax && parseFloat(car.mileage) > parseFloat(mileageMax)) {
+      return false;
+    }
+
+    return true;
+  });
+};

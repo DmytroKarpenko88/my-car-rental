@@ -6,6 +6,7 @@ import { fetchCars } from 'services/api';
 const numberOfCars = 8;
 const Catalog = ({ favorites, toggleFavorite }) => {
   const [allCars, setAllCars] = useState([]);
+  const [filterCars, setFilterCars] = useState([]);
   const [visibleCars, setVisibleCars] = useState(numberOfCars);
   const [totalCars, setTotalCars] = useState(null);
 
@@ -16,6 +17,10 @@ const Catalog = ({ favorites, toggleFavorite }) => {
     }
     fetchData();
   }, [allCars.length]);
+
+  useEffect(() => {
+    setFilterCars(allCars);
+  }, [allCars]);
 
   const loadMore = () => {
     const nextVisibleCars = visibleCars + 8;
@@ -29,12 +34,18 @@ const Catalog = ({ favorites, toggleFavorite }) => {
 
   return (
     <>
-      <Filter allCars={allCars} />
-      <CarsList
-        cars={allCars.slice(0, visibleCars)}
-        favorites={favorites}
-        toggleFavorite={toggleFavorite}
+      <Filter
+        allCars={allCars}
+        setFilterCars={setFilterCars}
+        setTotalCars={setTotalCars}
       />
+      {allCars.length > 0 && (
+        <CarsList
+          cars={filterCars.slice(0, visibleCars)}
+          favorites={favorites}
+          toggleFavorite={toggleFavorite}
+        />
+      )}
       {visibleCars < totalCars && (
         <button
           className="ml-auto mr-auto block mb-[150px] text-blue-500 text-base font-medium"
