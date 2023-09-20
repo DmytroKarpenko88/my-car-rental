@@ -7,11 +7,13 @@ module.exports = {
         gray: {
           'dark-gray': '#363535',
           'light-gray': '#F9F9F9',
+          100: '#F7F7FB',
           500: '#8A8A89',
           'rgba-18-20-23-50': 'rgba(18, 20, 23, 0.50)',
+          'rgba-138-138-137-20': 'rgba(138, 138, 137, 0.20)',
         },
         black: '#121417',
-        white: '#F7F7FB',
+        white: '#FFF',
         blue: {
           500: '#3470FF',
         },

@@ -36,13 +36,13 @@ export const Filter = ({ allCars, setFilterCars, setTotalCars }) => {
   return (
     <div className="mx-auto h-[74px]">
       <form
-        className="flex gap-[18px] text-ls font-medium "
+        className="flex justify-center gap-[18px] text-ls font-medium "
         onSubmit={handleSubmit}
       >
         <div className="">
           <p className="text-gray-500 text-sl">Car brand</p>
           <select
-            className="mt-2 py-[14px] px-[18px] w-56 rounded-[14px]  text-ls truncate"
+            className="mt-2 py-[11px] px-[18px] w-56 rounded-[14px] bg-gray-100 text-ls outline-none truncate"
             name="make"
             id="make"
             value={filterData.make}
@@ -63,7 +63,7 @@ export const Filter = ({ allCars, setFilterCars, setTotalCars }) => {
           <p className="text-gray-500 text-sl">Price/ 1 hour</p>
           <div className="relative">
             <select
-              className="mt-2 py-[14px] px-[18px] w-[125px] rounded-[14px]  text-ls truncate"
+              className="mt-2 py-[11px] px-[18px] w-[125px] bg-gray-100 text-ls rounded-[14px] outline-none truncate"
               name="price"
               id="price"
               value={filterData.price}
@@ -90,10 +90,10 @@ export const Filter = ({ allCars, setFilterCars, setTotalCars }) => {
             <div className="relative mt-2">
               <label className="absolute top-[14px] left-6">From </label>
               <input
-                className="w-[168px]  py-[14px] pl-[70px] pr-6 rounded-[14px] truncate"
+                className="w-[168px]  py-[14px] pl-[74px] bg-gray-100 pr-6 rounded-l-[14px] border-r-[1px] border-gray-rgba-138-138-137-20 outline-none truncate"
                 type="text"
                 name="mileageMin"
-                maxLength={7}
+                maxLength={6}
                 value={formatNumber(filterData.mileageMin)}
                 onChange={handleChange}
               />
@@ -101,7 +101,7 @@ export const Filter = ({ allCars, setFilterCars, setTotalCars }) => {
             <div className="relative mt-2">
               <label className="absolute top-[14px] left-6">To</label>
               <input
-                className="w-[168px]  py-[14px] pl-[50px] pr-6 rounded-[14px] truncate"
+                className="w-[168px]  py-[14px] pl-[54px] bg-gray-100 pr-6  rounded-r-[14px] outline-none  truncate"
                 type="text"
                 name="mileageMax"
                 maxLength={7}

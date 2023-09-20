@@ -10,7 +10,7 @@ export const parseKeyValueString = str => {
   const num = arr[0].split(' ').slice(-1).join('');
 
   arr[0] = arr[0].replace(num, '');
-  arr.splice(1, 0, num);
+  arr.splice(0, 1, num);
 
   return arr;
 };
@@ -62,11 +62,11 @@ export const filterCars = (cars, filters) => {
       return false;
     }
 
-    if (mileageMin && parseFloat(car.mileage) < parseFloat(mileageMin)) {
+    if (mileageMin && car.mileage < parseFloat(mileageMin.replace(',', ''))) {
       return false;
     }
 
-    if (mileageMax && parseFloat(car.mileage) > parseFloat(mileageMax)) {
+    if (mileageMax && car.mileage > parseFloat(mileageMax.replace(',', ''))) {
       return false;
     }
 

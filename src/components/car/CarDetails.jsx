@@ -48,46 +48,49 @@ export const CarDetails = ({ car }) => {
         </span>
       </div>
       <div className="mt-2 text-xs text-gray-rgba-18-20-23-50">
-        <div className="flex flex-row gap-[12px] ">
+        <div className="flex flex-row gap-[6px] ">
           <span>{city}</span>
-          <span>{country}</span>
-          <span>{id}</span>
-          <span>Year:{year}</span>
-          <span>Type:{type}</span>
-          <span>Class:{carClass}</span>
+          <span className="divider">{country}</span>
+          <span className="divider">{id}</span>
+          <span className="divider">Year:{year}</span>
+          <span className="divider">Type:{type}</span>
+          <span className="divider">Class:{carClass}</span>
         </div>
-        <div className="flex flex-row gap-[12px] mt-[4px]">
+        <div className="flex flex-row gap-[6px] mt-[4px]">
           <span>Fuel Consumption:{fuelConsumption} </span>
-          <span>Engine Size:{engineSize} </span>
+          <span className="divider">Engine Size:{engineSize} </span>
         </div>
       </div>
       <p className="mt-[14px] text-sm">{description}</p>
       <h2 className="text-sm font-medium mt-4">
         Accessories and functionalities:
       </h2>
-      <ul className="flex flex-wrap  gap-[12px] mt-2 text-xs text-gray-rgba-18-20-23-50">
+      <ul className="flex flex-wrap  gap-[6px] mt-2 text-xs text-gray-rgba-18-20-23-50">
         {accessories.map((acc, index) => (
-          <li key={index}>{acc}</li>
+          <li key={index} className={index === 0 ? '' : 'divider'}>
+            {acc}
+          </li>
         ))}
       </ul>
-      <ul className="flex flex-wrap gap-[12px] mt-2 text-xs text-gray-rgba-18-20-23-50">
+      <ul className="flex flex-wrap gap-[px] mt-2 text-xs text-gray-rgba-18-20-23-50">
         {functionalities.map((acc, index) => (
-          <li key={index}>{acc}</li>
+          <li key={index} className={index === 0 ? '' : 'divider'}>
+            {acc}
+          </li>
         ))}
       </ul>
 
       <h2 className="mt-6 text-sm font-medium">Rental Conditions: </h2>
-      <div className="flex flex-wrap mt-2 gap-1 text-gray-dark-gray text-gray-rgba-18-20-23-50">
-        {conditions.map((el, index) => (
-          <span
-            className={`py-[7px] px-[14px] bg-gray-light-gray rounded-[35px] ${
-              !isNaN(el) && 'text-blue-500'
-            }`}
-            key={index}
-          >
-            {el}
-          </span>
-        ))}
+      <div className="flex flex-wrap mt-2 gap-1 text-xs text-gray-dark-gray text-gray-rgba-18-20-23-50">
+        <span className="py-[7px] px-[14px] bg-gray-light-gray rounded-[35px]">
+          Minimum age : <span className="text-blue-500">{conditions[0]}</span>
+        </span>
+        <span className="py-[7px] px-[14px] bg-gray-light-gray rounded-[35px]">
+          {conditions[1]}
+        </span>
+        <span className="py-[7px] px-[14px] bg-gray-light-gray rounded-[35px]">
+          {conditions[2]}
+        </span>
         <span className="py-[7px] px-[14px] bg-gray-light-gray rounded-[35px]">
           Mileage: <span className="text-blue-500">{mil}</span>
         </span>

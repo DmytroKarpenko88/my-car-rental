@@ -53,16 +53,16 @@ export const CarItem = ({ car, toggleFavorite, isFavorite }) => {
         </div>
         <div className="text-xs text-gray-rgba-18-20-23-50 mt-2">
           <div className="flex flex-row gap-x-[6px] truncate">
-            <span className="">{city}</span>
-            <span>{country}</span>
-            <span>{rentalCompany}</span>
-            <span>{carClass}</span>
+            <span>{city}</span>
+            <span className="divider">{country}</span>
+            <span className="divider">{rentalCompany}</span>
+            <span className="divider">{carClass}</span>
           </div>
           <div className="flex flex-row gap-x-[6px] mt-1 truncate">
             <span>{type}</span>
-            <span>{model}</span>
-            <span>{mileage}</span>
-            <span className="truncate">{functionalities[0]}</span>
+            <span className="divider">{model}</span>
+            <span className="divider">{mileage}</span>
+            <span className="truncate divider">{functionalities[0]}</span>
           </div>
         </div>
         <button

@@ -48,7 +48,7 @@ const Catalog = ({ favorites, toggleFavorite }) => {
       )}
       {visibleCars < totalCars && (
         <button
-          className="ml-auto mr-auto block mb-[150px] text-blue-500 text-base font-medium"
+          className="ml-auto mr-auto block mb-[150px] text-blue-500 text-base font-medium underline hover:text-indigo-500"
           onClick={loadMore}
         >
           Load more

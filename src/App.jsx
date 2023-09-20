@@ -5,7 +5,6 @@ import { Route, Routes } from 'react-router-dom';
 const Home = lazy(() => import('./pages/Home'));
 const Catalog = lazy(() => import('./pages/Catalog'));
 const Favorites = lazy(() => import('./pages/Favorites'));
-const NotFound = lazy(() => import('./pages/NotFound'));
 
 const App = () => {
   const [favorites, setFavorites] = useState(
@@ -54,7 +53,7 @@ const App = () => {
               />
             }
           />
-          <Route path="*" element={<NotFound />}></Route>
+          <Route path="*" element={<Home />}></Route>
         </Route>
       </Routes>
     </Suspense>

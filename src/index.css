@@ -15,10 +15,17 @@ body {
 }
 
 .active {
-  background-color: #3470ff;
-  color: white;
+  border-color: #3470ff;
+  color: #3470ff;
 }
 
 .modal-content {
   border-radius: 24px;
+}
+
+.divider:before {
+  content: '';
+  border-left: 1px solid rgba(18, 20, 23, 0.1);
+  margin-right: 6px;
+  /* padding-left: 6px; Відстань від початку роздільника до тексту */
 }
