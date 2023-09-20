@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/my-car-rental/static/css/main.9d7fa4fb.css",
-    "main.js": "/my-car-rental/static/js/main.a4cbb1ce.js",
+    "main.css": "/my-car-rental/static/css/main.0ec3b4fa.css",
+    "main.js": "/my-car-rental/static/js/main.6a0e1b3c.js",
     "static/js/415.73b26c9f.chunk.js": "/my-car-rental/static/js/415.73b26c9f.chunk.js",
-    "static/js/516.71edc23a.chunk.js": "/my-car-rental/static/js/516.71edc23a.chunk.js",
+    "static/js/516.ad826e18.chunk.js": "/my-car-rental/static/js/516.ad826e18.chunk.js",
     "static/js/395.2b5072f8.chunk.js": "/my-car-rental/static/js/395.2b5072f8.chunk.js",
     "static/js/805.52aeb409.chunk.js": "/my-car-rental/static/js/805.52aeb409.chunk.js",
     "static/js/787.c439bef9.chunk.js": "/my-car-rental/static/js/787.c439bef9.chunk.js",
     "static/js/307.fc5b1128.chunk.js": "/my-car-rental/static/js/307.fc5b1128.chunk.js",
     "index.html": "/my-car-rental/index.html",
-    "main.9d7fa4fb.css.map": "/my-car-rental/static/css/main.9d7fa4fb.css.map",
-    "main.a4cbb1ce.js.map": "/my-car-rental/static/js/main.a4cbb1ce.js.map",
+    "main.0ec3b4fa.css.map": "/my-car-rental/static/css/main.0ec3b4fa.css.map",
+    "main.6a0e1b3c.js.map": "/my-car-rental/static/js/main.6a0e1b3c.js.map",
     "415.73b26c9f.chunk.js.map": "/my-car-rental/static/js/415.73b26c9f.chunk.js.map",
-    "516.71edc23a.chunk.js.map": "/my-car-rental/static/js/516.71edc23a.chunk.js.map",
+    "516.ad826e18.chunk.js.map": "/my-car-rental/static/js/516.ad826e18.chunk.js.map",
     "395.2b5072f8.chunk.js.map": "/my-car-rental/static/js/395.2b5072f8.chunk.js.map",
     "805.52aeb409.chunk.js.map": "/my-car-rental/static/js/805.52aeb409.chunk.js.map",
     "787.c439bef9.chunk.js.map": "/my-car-rental/static/js/787.c439bef9.chunk.js.map",
     "307.fc5b1128.chunk.js.map": "/my-car-rental/static/js/307.fc5b1128.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9d7fa4fb.css",
-    "static/js/main.a4cbb1ce.js"
+    "static/css/main.0ec3b4fa.css",
+    "static/js/main.6a0e1b3c.js"
   ]
 }
