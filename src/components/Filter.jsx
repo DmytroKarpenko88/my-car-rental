@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { allUnicBrands, filterCars, formatNumber, priceList } from 'utils';
 
+const initialState = {
+  make: '',
+  price: '',
+  mileageMin: '',
+  mileageMax: '',
+};
+
 export const Filter = ({ allCars, setFilterCars, setTotalCars }) => {
-  const [filterData, setFilterData] = useState({
-    make: '',
-    price: '',
-    mileageMin: '',
-    mileageMax: '',
-  });
+  const [filterData, setFilterData] = useState(initialState);
 
   const brands = allUnicBrands(allCars);
 
@@ -26,14 +28,8 @@ export const Filter = ({ allCars, setFilterCars, setTotalCars }) => {
   };
 
   const resetForm = e => {
-    setFilterData({
-      make: '',
-      price: '',
-      mileageMin: '',
-      mileageMax: '',
-    });
-    const carsForSearch = filterCars(allCars, filterData);
-    setFilterCars(carsForSearch);
+    setFilterData(initialState);
+    setFilterCars(allCars);
     setTotalCars(allCars.length);
   };
 
@@ -65,25 +61,27 @@ export const Filter = ({ allCars, setFilterCars, setTotalCars }) => {
 
         <div>
           <p className="text-gray-500 text-sl">Price/ 1 hour</p>
-          <select
-            className="mt-2 py-[14px] px-[18px] w-[125px] rounded-[14px]  text-ls truncate"
-            name="price"
-            id="price"
-            value={filterData.price}
-            onChange={handleChange}
-          >
-            <option value="" disabled>
-              To $
-            </option>
-            {priceArr.map((price, index) => (
-              <option key={index} value={price}>
-                {price}
+          <div className="relative">
+            <select
+              className="mt-2 py-[14px] px-[18px] w-[125px] rounded-[14px]  text-ls truncate"
+              name="price"
+              id="price"
+              value={filterData.price}
+              onChange={handleChange}
+            >
+              <option value="" disabled>
+                To $
               </option>
-            ))}
-          </select>
-          <span className="selected-price">
-            {filterData.price ? `To ${filterData.price} $` : ''}
-          </span>
+              {priceArr.map((price, index) => (
+                <option key={index} value={price} className="">
+                  {price}
+                </option>
+              ))}
+            </select>
+            <span className="absolute top-6 left-3 hidden">
+              {filterData.price ? `To ${filterData.price} $` : ''}
+            </span>
+          </div>
         </div>
 
         <div>
