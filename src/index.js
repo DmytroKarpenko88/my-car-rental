@@ -9,7 +9,7 @@ import { BrowserRouter } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/test-car">
+    <BrowserRouter basename="/my-car-rental">
       <App />
     </BrowserRouter>
   </React.StrictMode>
