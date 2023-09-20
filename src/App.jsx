@@ -30,6 +30,10 @@ const App = () => {
     }
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }, [favorites]);
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
