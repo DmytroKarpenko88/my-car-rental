@@ -18,3 +18,7 @@ body {
   background-color: #3470ff;
   color: white;
 }
+
+.modal-content {
+  border-radius: 24px;
+}

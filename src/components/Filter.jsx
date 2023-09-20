@@ -38,11 +38,15 @@ export const Filter = ({ allCars, setFilterCars, setTotalCars }) => {
   };
 
   return (
-    <div className="mx-auto w-[859px] h-[74px] bg-gray-400">
-      <form className="flex" onSubmit={handleSubmit}>
+    <div className="mx-auto h-[74px]">
+      <form
+        className="flex gap-[18px] text-ls font-medium "
+        onSubmit={handleSubmit}
+      >
         <div className="">
-          <p>Car brand</p>
+          <p className="text-gray-500 text-sl">Car brand</p>
           <select
+            className="mt-2 py-[14px] px-[18px] w-56 rounded-[14px]  text-ls truncate"
             name="make"
             id="make"
             value={filterData.make}
@@ -60,8 +64,9 @@ export const Filter = ({ allCars, setFilterCars, setTotalCars }) => {
         </div>
 
         <div>
-          <p>Price/ 1 hour</p>
+          <p className="text-gray-500 text-sl">Price/ 1 hour</p>
           <select
+            className="mt-2 py-[14px] px-[18px] w-[125px] rounded-[14px]  text-ls truncate"
             name="price"
             id="price"
             value={filterData.price}
@@ -82,30 +87,36 @@ export const Filter = ({ allCars, setFilterCars, setTotalCars }) => {
         </div>
 
         <div>
-          <p>Car mileage / km</p>
-          <label>
-            From
-            <input
-              type="text"
-              name="mileageMin"
-              value={formatNumber(filterData.mileageMin)}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            To
-            <input
-              type="text"
-              name="mileageMax"
-              value={formatNumber(filterData.mileageMax)}
-              onChange={handleChange}
-            />
-          </label>
+          <p className="text-gray-500 text-sl">Car mileage / km</p>
+          <div className="flex">
+            <div className="relative mt-2">
+              <label className="absolute top-[14px] left-6">From </label>
+              <input
+                className="w-[168px]  py-[14px] pl-[70px] pr-6 rounded-[14px] truncate"
+                type="text"
+                name="mileageMin"
+                maxLength={7}
+                value={formatNumber(filterData.mileageMin)}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="relative mt-2">
+              <label className="absolute top-[14px] left-6">To</label>
+              <input
+                className="w-[168px]  py-[14px] pl-[50px] pr-6 rounded-[14px] truncate"
+                type="text"
+                name="mileageMax"
+                maxLength={7}
+                value={formatNumber(filterData.mileageMax)}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
         </div>
 
         <button
           type="submit"
-          className="bg-blue-500 rounded-xl px-11 py-[14px] hover:bg-indigo-500 text-white font-semibold text-sm"
+          className="bg-blue-500 mt-auto h-12  rounded-xl px-11 py-[14px] hover:bg-indigo-500 text-white font-semibold text-sm"
         >
           Search
         </button>
@@ -113,7 +124,7 @@ export const Filter = ({ allCars, setFilterCars, setTotalCars }) => {
         <button
           type="button"
           onClick={resetForm}
-          className="bg-blue-500 rounded-xl px-11 py-[14px]  hover:bg-indigo-500 text-white font-semibold text-sm"
+          className="bg-blue-500 mt-auto h-12 rounded-xl px-11 py-[14px]  hover:bg-indigo-500 text-white font-semibold text-sm"
         >
           Reset
         </button>
